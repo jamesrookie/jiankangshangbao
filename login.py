@@ -1,5 +1,5 @@
 from random import random
-
+from sendMessageToTgbot import post_tg
 import requests
 import re
 from AES import aes_encrypt_jiekou
@@ -275,7 +275,8 @@ for item in students:
     # print(pwd)
     response=login(cardNumber,pwd)
     if('T_REPORT_EPIDEMIC_CHECKIN_SAVE":1' in response):
-        print("恭喜"+cardNumber+",上报成功!")
+        #推送消息给tg
+        post_tg("恭喜"+cardNumber+",上报成功!")
     else:
-        print(cardNumber+"上报失败!")
+        post_tg(cardNumber+"上报失败!")
 
