@@ -20,3 +20,5 @@ def post_tg(message):
         print("Info:Telegram Message sent")
     else:
         print("Telegram Error")
+
+post_tg("你哈")        
