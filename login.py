@@ -248,7 +248,7 @@ def login(username, password):
         'DZ_ZDYPJG': '',
     }
     res=req.post(url="http://ehall.seu.edu.cn/qljfwapp2/sys/lwReportEpidemicSeu/modules/dailyReport/T_REPORT_EPIDEMIC_CHECKIN_SAVE.do",data=data2)
-    print(res.text)
+    return res.text
 
 
     # print(wid)
@@ -273,5 +273,9 @@ for item in students:
     pwd=item.split(":")[1]
     # print(cardNumber)
     # print(pwd)
-    login(cardNumber,pwd) 
+    response=login(cardNumber,pwd)
+    if('T_REPORT_EPIDEMIC_CHECKIN_SAVE":1' in response):
+        print("恭喜"+cardNumber+",上报成功!")
+    else:
+        print(cardNumber+"上报失败!")
 
