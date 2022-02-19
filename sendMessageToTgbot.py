@@ -1,4 +1,5 @@
 import requests
+from notify import telegram_bot
 #rj的专属机器人
 TG_TOKEN = "2106557388:AAFoa76sfxWUHrshRH880r12jokRJyPuF_o"
 CHAT_ID = '816551561'
@@ -21,4 +22,4 @@ def post_tg(message):
     else:
         print("Telegram Error")
 
-post_tg("你哈")        
+telegram_bot("你好")       
