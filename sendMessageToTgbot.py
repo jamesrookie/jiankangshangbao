@@ -1,4 +1,5 @@
 import requests
+#notify是青龙面板里的库，用来推送各种东西
 from notify import telegram_bot
 #rj的专属机器人
 TG_TOKEN = "2106557388:AAFoa76sfxWUHrshRH880r12jokRJyPuF_o"
@@ -22,4 +23,4 @@ def post_tg(message):
     else:
         print("Telegram Error")
 
-telegram_bot("----------每日健康上报----------","上报成功")       
+telegram_bot("********每日健康上报********","上报成功")       
