@@ -1,5 +1,4 @@
 from random import random
-from sendMessageToTgbot import post_tg
 import requests
 import re
 from AES import aes_encrypt_jiekou
@@ -7,6 +6,7 @@ import math
 import json
 import time
 import os
+from notify import telegram_bot
 
 #用来存放学生的账号信息
 students=[]    
@@ -276,7 +276,7 @@ for item in students:
     response=login(cardNumber,pwd)
     if('T_REPORT_EPIDEMIC_CHECKIN_SAVE":1' in response):
         #推送消息给tg
-        post_tg("恭喜"+cardNumber+",上报成功!")
+        telegram_bot("********健康上报********","恭喜"+cardNumber+",上报成功!")
     else:
-        post_tg(cardNumber+"上报失败!")
+        telegram_bot("********健康上报********",cardNumber+"上报失败!")
 
