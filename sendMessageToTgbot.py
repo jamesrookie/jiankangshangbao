@@ -22,4 +22,4 @@ def post_tg(message):
     else:
         print("Telegram Error")
 
-telegram_bot("你好")       
+telegram_bot("----------每日健康上报----------","上报成功")       
