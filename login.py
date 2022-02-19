@@ -6,6 +6,14 @@ from AES import aes_encrypt_jiekou
 import math
 import json
 import time
+import os
+
+#用来存放学生的账号信息
+students=[]    
+if "yikatong" in os.environ and os.environ["yikatong"]:
+    yikatong = os.environ["yikatong"]
+    students=yikatong.split('&')
+    print(students)
 
 
 def _rds(length):
@@ -259,6 +267,11 @@ def login(username, password):
 
 
 
-login("一卡通号", '密码')
-
+#login("卡号", '密码')
+for item in students:
+    cardNumber=item.split(":")[0]
+    pwd=item.split(":")[1]
+    # print(cardNumber)
+    # print(pwd)
+    login(cardNumber,pwd) 
 
